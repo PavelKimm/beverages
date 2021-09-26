@@ -1,0 +1,43 @@
+Create product (beverage):
+(POST) http://localhost:8000/api/v1/products/
+
+Get list of products:
+(GET) http://127.0.0.1:8000/api/v1/products/
+Query params (filters):
+{
+    min_price - product minimum price
+    max_price - product maximum price
+    name - string that is contained in product
+}
+Example: http://127.0.0.1:8000/api/v1/products/?min_price=1&max_price=2&name=peps
+
+Get certain product:
+(GET) http://127.0.0.1:8001/api/v1/products/<product_id:int>/
+
+Edit some fields in product:
+(PATCH) http://127.0.0.1:8001/api/v1/products/<product_id:int>/
+Request body:
+{
+    "price": float
+}
+
+Edit all fields in product:
+(PUT) http://127.0.0.1:8001/api/v1/products/<product_id:int>/
+Request body:
+{
+    "code": str,
+    "name": str,
+    "price": float
+}
+
+Delete product:
+(DELETE) http://127.0.0.1:8001/api/v1/products/<product_id:int>/
+
+
+You can get order total price by using the following API:
+(GET) http://localhost:8000/api/v1/products/total/
+Query params:
+{
+    product_codes - product codes separated by space
+}
+Example: http://localhost:8000/api/v1/products/total/?product_codes=PC CC PC WA PC

@@ -15,7 +15,16 @@ class ProductListView(generics.ListAPIView, generics.CreateAPIView):
     serializer_class = ProductSerializer
 
     def get_queryset(self):
-        queryset = self.queryset
+        queryset = self.queryset.all()
+        name = self.request.query_params.get('name')
+        min_price = self.request.query_params.get('min_price')
+        max_price = self.request.query_params.get('max_price')
+        if name:
+            queryset = queryset.filter(name__icontains=name)
+        if min_price:
+            queryset = queryset.filter(price__gte=min_price)
+        if max_price:
+            queryset = queryset.filter(price__lte=max_price)
         return queryset
 
     def post(self, request, *args, **kwargs):

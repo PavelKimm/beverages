@@ -7,6 +7,9 @@
 * ### Install required packages
 <code> pipenv install </code>
 
+* ### Activate the pipenv shell
+<code> pipenv shell </code>
+
 * ### Run migrations
 <code> python manage.py makemigrations </code>
 <br>
@@ -17,3 +20,5 @@
 
 * ### Run the server
 <code> python manage.py runserver </code>
+
+## You can read API documentation in *documentation.txt* file
