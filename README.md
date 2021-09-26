@@ -9,6 +9,7 @@
 
 * ### Run migrations
 <code> python manage.py makemigrations </code>
+<br>
 <code> python manage.py migrate </code>
 
 * ### Run tests
