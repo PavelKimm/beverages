@@ -1,0 +1,21 @@
+# PyCharm
+.idea/
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Project exclude paths
+migrations/
+
+# Django stuff:
+db.sqlite3
+static/
